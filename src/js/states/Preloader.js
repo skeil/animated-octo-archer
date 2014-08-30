@@ -19,12 +19,16 @@ BasicGame.Preloader.prototype = {
     this.load.setPreloadSprite(this.preloadBar);
 
     //	Here we load the rest of the assets our game needs.
-    this.load.image('titlepage', 'assets/img/water_texture.png');
-    this.load.image('mazetiles', 'assets/img/tileset.png');
+    this.load.image('titlepage' , 'assets/img/water_texture.png');
+    this.load.image('mazetiles' , 'assets/img/tileset.png');
     this.load.image('playButton', 'assets/img/x.png');
+    this.load.image('rainbow'   , 'assets/img/rainbow.png');
+    this.load.image('wolke'     , 'assets/img/wolke.png');
     // this.load.atlas('playButton', 'assets/img/x.png', 'assets/img/button_texture_atlas.json');
+    this.game.load.spritesheet('black', 'assets/img/blackspritesheet.png', 120, 120, 6);
 
-    //this.load.audio('titleMusic', ['assets/audio/title.mp3']);
+    this.load.audio('background1', ['assets/audio/background1.mp3']);
+    this.load.audio('background2', ['assets/audio/background2.mp3']);
     //this.load.bitmapFont('caslon', 'assets/img/desyrel-pink.png', 'asstes/img/desyrel-pink.xml');
   },
 
@@ -44,7 +48,8 @@ BasicGame.Preloader.prototype = {
     //	the update function completely.
 
     this.ready = true;
-    this.game.state.start('MainMenu');
+    this.game.state.start('Preloader');
+    this.game.state.start('Game');
 
     /*if (this.cache.isSoundDecoded('titleMusic') && this.ready === false)
 		{
