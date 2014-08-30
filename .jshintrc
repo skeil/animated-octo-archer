@@ -15,11 +15,12 @@
     "quotmark": "single",
     "regexp": true,
     "smarttabs": true,
-    "strict": true,
     "trailing": true,
     "undef": true,
     "unused": true,
     "globals": {
-        "Promise": false
+        "Promise": false,
+        "BasicGame": true,
+        "Phaser": true
     }
-}   
+}

@@ -1,4 +1,6 @@
-BasicGame = {};
+// 'use strict';
+
+var BasicGame = {};
 
 BasicGame.Boot = function (game) {
     this.game = game;
@@ -8,7 +10,7 @@ BasicGame.Boot.prototype = {
     preload: function () {
 
         //  Here we load the assets required for our preloader (in this case a background and a loading bar)
-        this.load.image('preloaderBackground', 'assets/img/water_texture.jpg');
+        this.load.image('preloaderBackground', 'assets/img/water_texture.png');
         this.load.image('preloaderBar', 'assets/img/plane-sheet.png');
 
     },
@@ -28,7 +30,7 @@ BasicGame.Boot.prototype = {
             this.game.scale.minWidth = 320;
             this.game.scale.minHeight = 240;
             this.game.scale.maxWidth = 1024;
-            this.game.scale.maxHeight = 768;            
+            this.game.scale.maxHeight = 768;
             this.game.scale.pageAlignHorizontally = true;
             this.game.scale.pageAlignVertically = true;
             this.game.scale.setScreenSize(true);

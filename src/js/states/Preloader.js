@@ -1,3 +1,4 @@
+// 'use strict';
 
 BasicGame.Preloader = function (game) {
 
@@ -18,9 +19,10 @@ BasicGame.Preloader.prototype = {
 		this.load.setPreloadSprite(this.preloadBar);
 
 		//	Here we load the rest of the assets our game needs.
-		this.load.image('titlepage', 'assets/img/water_texture.jpg');
+		this.load.image('titlepage', 'assets/img/water_texture.png');
 		this.load.image('mazetiles', 'assets/img/tileset.png');
-		this.load.atlas('playButton', 'assets/img/x.png', 'assets/img/button_texture_atlas.json');
+		this.load.image('playButton', 'assets/img/x.png');
+		// this.load.atlas('playButton', 'assets/img/x.png', 'assets/img/button_texture_atlas.json');
 
 		//this.load.audio('titleMusic', ['assets/audio/title.mp3']);
 		//this.load.bitmapFont('caslon', 'assets/img/desyrel-pink.png', 'asstes/img/desyrel-pink.xml');
@@ -37,7 +39,7 @@ BasicGame.Preloader.prototype = {
 		//	You can jump right into the menu if you want and still play the music, but you'll have a few
 		//	seconds of delay while the mp3 decodes - so if you need your music to be in-sync with your menu
 		//	it's best to wait for it to decode here first, then carry on.
-		
+
 		//	If you don't have any music in your game then put the game.state.start line into the create function and delete
 		//	the update function completely.
 

@@ -1,3 +1,4 @@
+// 'use strict';
 
 BasicGame.Game = function (game) {
     this.game = game;
@@ -11,7 +12,6 @@ BasicGame.Game.prototype = {
     },
 
 	update: function () {
-
 	},
 
 	quitGame: function (pointer) {

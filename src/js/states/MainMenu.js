@@ -1,3 +1,4 @@
+// 'use strict';
 
 BasicGame.MainMenu = function (game) {
 	this.game = game;
@@ -15,7 +16,6 @@ BasicGame.MainMenu.prototype = {
 	},
 
 	update: function () {
-
 	},
 
 	startGame: function (pointer) {
