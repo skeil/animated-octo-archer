@@ -39,34 +39,49 @@ BasicGame.Game.prototype = {
     // assets
     this.luBlack   = this.game.add.sprite(200,   0, 'black');
     this.luRainbow = this.game.add.sprite(0  , 400, 'rainbow');
-    this.luWolke   = this.game.add.sprite(0  , 30 , 'wolke');
-
-    //  Here we add a new animation called 'walk'
-    //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'black' sprite sheet
-    this.luBlack.animations.add('walk');
-
-    //  And this starts the animation playing by using its key ("walk")
-    //  30 is the frame rate (30fps)
-    //  true means it will loop when it finishes
-    this.luBlack.animations.play('walk', 6, true);
+    this.luWolke   = this.game.add.sprite(0  , 50 , 'wolke');
+    this.luWolke2  = this.game.add.sprite(500, 30 , 'wolke2');
+    this.luWolke22 = this.game.add.sprite(0  , 30 , 'wolke2');
 
     //  Here we add a new animation called 'run'
     //  We haven't specified any frames because it's using every frame in the texture atlas
     this.luWolke.animations.add('run');
-
     //  And this starts the animation playing by using its key ("run")
     //  15 is the frame rate (15fps)
     //  true means it will loop when it finishes
     this.luWolke.animations.play('run', 15, true);
 
+    //  Here we add a new animation called 'run'
+    //  We haven't specified any frames because it's using every frame in the texture atlas
+    this.luWolke2.animations.add('run');
+    //  And this starts the animation playing by using its key ("run")
+    //  15 is the frame rate (15fps)
+    //  true means it will loop when it finishes
+    this.luWolke2.animations.play('run', 15, true);
+    this.luWolke2.scale.x = 30;
+
+    //  Here we add a new animation called 'run'
+    //  We haven't specified any frames because it's using every frame in the texture atlas
+    this.luWolke22.animations.add('run');
+    //  And this starts the animation playing by using its key ("run")
+    //  15 is the frame rate (15fps)
+    //  true means it will loop when it finishes
+    this.luWolke22.animations.play('run', 15, true);
+    this.luWolke22.scale.x = 30;
+
     this.game.physics.enable(this.luBlack, Phaser.Physics.ARCADE);
 
+    //  Here we add a new animation called 'walk'
+    //  Because we didn't give any other parameters it's going to make an animation from all available frames in the 'black' sprite sheet
+    this.luBlack.animations.add('walk');
+    //  And this starts the animation playing by using its key ("walk")
+    //  30 is the frame rate (30fps)
+    //  true means it will loop when it finishes
+    this.luBlack.animations.play('walk', 6, true);
     // Make player collide with world boundaries so he doesn't leave the stage
     this.luBlack.body.collideWorldBounds = true;
-
     // Set player minimum and maximum movement speed
     this.luBlack.body.maxVelocity.setTo(this.MAX_SPEED, this.MAX_SPEED); // x, y
-
     this.luBlack.anchor.setTo(0.5,0.5);
 
     // Add drag to the player that slows them down when they are not accelerating
@@ -106,6 +121,20 @@ BasicGame.Game.prototype = {
     if (this.luWolke.x < -this.luWolke.width)
     {
         this.luWolke.x = this.game.world.width;
+    }
+
+    this.luWolke2.x -= 2;
+
+    if (this.luWolke2.x < -this.luWolke2.width)
+    {
+        this.luWolke2.x = this.game.world.width;
+    }
+
+    this.luWolke22.x -= 2;
+
+    if (this.luWolke22.x < -this.luWolke22.width)
+    {
+        this.luWolke22.x = this.game.world.width;
     }
 
     if (this.game.time.fps !== 0) {
