@@ -23,7 +23,6 @@ BasicGame.Preloader.prototype = {
     this.load.image('mazetiles' , 'assets/img/tileset.png');
     this.load.image('playButton', 'assets/img/x.png');
     this.load.image('rainbow'   , 'assets/img/rainbow.png');
-    this.load.image('wolke'     , 'assets/img/wolke.png');
     this.load.image('wolke2'     , 'assets/img/wolke2.png');
     // this.load.atlas('playButton', 'assets/img/x.png', 'assets/img/button_texture_atlas.json');
     this.game.load.spritesheet('black', 'assets/img/blackspritesheet.png', 120, 120, 6);

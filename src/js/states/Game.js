@@ -39,17 +39,8 @@ BasicGame.Game.prototype = {
     // assets
     this.luBlack   = this.game.add.sprite(200,   0, 'black');
     this.luRainbow = this.game.add.sprite(0  , 400, 'rainbow');
-    this.luWolke   = this.game.add.sprite(0  , 50 , 'wolke');
     this.luWolke2  = this.game.add.sprite(500, 30 , 'wolke2');
     this.luWolke22 = this.game.add.sprite(0  , 30 , 'wolke2');
-
-    //  Here we add a new animation called 'run'
-    //  We haven't specified any frames because it's using every frame in the texture atlas
-    this.luWolke.animations.add('run');
-    //  And this starts the animation playing by using its key ("run")
-    //  15 is the frame rate (15fps)
-    //  true means it will loop when it finishes
-    this.luWolke.animations.play('run', 15, true);
 
     //  Here we add a new animation called 'run'
     //  We haven't specified any frames because it's using every frame in the texture atlas
@@ -116,13 +107,6 @@ BasicGame.Game.prototype = {
   },
 
   update: function() {
-    this.luWolke.x -= 2;
-
-    if (this.luWolke.x < -this.luWolke.width)
-    {
-        this.luWolke.x = this.game.world.width;
-    }
-
     this.luWolke2.x -= 2;
 
     if (this.luWolke2.x < -this.luWolke2.width)
